@@ -1,0 +1,40 @@
+Analysis initiated from SIMULIA established products
+Abaqus JOB UMAT_TEST_NL
+Abaqus 2022
+Successfully checked out QSD/50 from DSLS server scclic7.scc.kit.edu
+Successfully checked out QXT/50 from DSLS server scclic7.scc.kit.edu
+Abaqus License Manager checked out the following licenses:
+Abaqus/Standard checked out 50 tokens from DSLS server scclic7.scc.kit.edu.
+<5333 out of 7590 licenses remain available>.
+Begin Compiling Abaqus/Standard User Subroutines
+11/10/2023 3:22:59 PM
+Intel(R) Fortran Intel(R) 64 Compiler Classic for applications running on Intel(R) 64, Version 2021.10.0 Build 20230609_000000
+Copyright (C) 1985-2023 Intel Corporation.  All rights reserved.
+
+UMAT_NL.f(165): error #6404: This name does not have a type, and must have an explicit type.   [GET_G1G2]
+	  G1G2_NL = GET_G1G2(IND_STRESS)
+--------------------^
+UMAT_NL.f(221): error #7002: Error in opening the compiled module file.  Check INCLUDE paths.   [FUNCTIONS]
+	USE FUNCTIONS
+------------^
+UMAT_NL.f(329): error #6404: This name does not have a type, and must have an explicit type.   [GET_DPSI]
+    DPSI = GET_DPSI(dtime, A_SIG_NL)
+-----------^
+UMAT_NL.f(335): error #6404: This name does not have a type, and must have an explicit type.   [GET_G]
+    G = GET_G(G0_NL, G1G2_NL, DPSI, G0, G1, G2, G3, TAU1, TAU2, TAU3)
+--------^
+UMAT_NL.f(336): error #6404: This name does not have a type, and must have an explicit type.   [GET_K]
+	K = GET_K(G0_NL, G1G2_NL, DPSI, K0, K1, K2, K3, TAU1, TAU2, TAU3)
+------------^
+UMAT_NL.f(348): error #6404: This name does not have a type, and must have an explicit type.   [GET_RES_NORM]
+    STRAN_RES = GET_RES_NORM(DSTRAN_TRIAL, DSTRAN, ntens)
+----------------^
+UMAT_NL.f(356): error #6404: This name does not have a type, and must have an explicit type.   [GET_JACOBIAN]
+	  JACOBIAN = GET_JACOBIAN(stress, DSTRESS, STRAN_INH1, STRAN_INH2, STRAN_INH3, &
+---------------------^
+UMAT_NL.f(368): error #6404: This name does not have a type, and must have an explicit type.   [GET_DEPS]
+	  DSTRAN_TRIAL = GET_DEPS(stress, DSTRESS, STRAN_INH1, STRAN_INH2, STRAN_INH3, &
+-------------------------^
+compilation aborted for UMAT_NL.f (code 1)
+Abaqus Error: Problem during compilation - UMAT_NL.f
+Abaqus/Analysis exited with errors
